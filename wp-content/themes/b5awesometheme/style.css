@@ -1,0 +1,417 @@
+/*
+Theme Name: Bootstrap 5 AwesomeTheme
+Theme URI: https://felixbiwott.heroku.com/wordpress/themes/b5awesometheme
+Author: Felix Kiptoo Biwott
+Author URI: https://felixbiwott.heroku.com/
+Description: The Bootstrap 5 AwesomeTheme has amazing features a full range of post formats, each displayed beautifully in their own unique way. Very responsive them for any device, big or small.
+Version: 3.519
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: bootstrap, responsive, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-men, featured-images, post-formats
+Text Domain: b5awesometheme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+body {
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#ttr_content {
+    padding: 0 1px;
+}
+
+h1,
+h2 {
+    color: var(--bs-gray-800);
+}
+
+h1 a,
+h2 a {
+    color: #dc3545;
+    text-decoration: none;
+}
+
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: none;
+}
+
+.link-unstyled {
+    text-decoration: none;
+    color: black;
+}
+
+.link-unstyled:hover,
+.link-unstyled:visited {
+    color: black;
+}
+
+#ttr_sidebar {
+    border-left: 1px solid #198754;
+}
+
+#ttr_footer {
+    width: 100%;
+    border-top: 1px #a2a2a2 solid;
+    text-align: left;
+    background: #333;
+    min-height: 300px;
+}
+
+#ttr_footer .section-headline {
+    box-shadow: inset 0 -11px 4px -1px #333, inset 0 -12px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width:574px) {
+    #ttr_footer .section-headline {
+        box-shadow: none;
+        text-align: left;
+    }
+}
+
+#ttr_footer .section-headline-text {
+    -webkit-text-size-adjust: 100%;
+    --vh: 6.57px;
+    font-family: Open Sans, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    background-color: #333;
+    color: inherit;
+    padding: 0 22px;
+    white-space: nowrap;
+}
+
+@media (max-width:574px) {
+    #ttr_footer .section-headline-text {
+        font-size: 80%;
+        border-bottom: solid #333 3px;
+        box-shadow: 0 7px 3px -1px #333, 0 6px;
+        padding: 0;
+
+    }
+
+}
+
+
+.title {
+    font-size: 11pt;
+    font-family: verdana;
+    font-weight: bold;
+}
+
+/*Start Nav css*/
+/*Strip the ul of padding and list styling*/
+.primary-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*Create a horizontal list with spacing*/
+.primary-menu li {
+    display: inline-block;
+    position: relative;
+
+}
+
+/*Style for top level links*/
+.primary-menu>ul>li>a {
+
+    display: block;
+    position: relative;
+    padding: 10px 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    color: #333;
+    text-decoration: none;
+
+}
+
+
+.primary-menu ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    transition: all .4s ease-in-out;
+    border-bottom: solid 2px transparent;
+}
+
+
+.primary-menu>ul>li>a:hover::before {
+    color: #35dc8d;
+    width: 100%;
+    border-bottom: solid 2px #333;
+}
+
+/*Style for sub menu links*/
+ul.sub-menu>li a {
+    display: block;
+    text-align: left;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+    padding: 5px;
+}
+
+
+/*Hide dropdown links until they are needed*/
+li.menu-item-has-children ul {
+    display: none;
+}
+
+/*Make dropdown links vertical*/
+li.menu-item-has-children ul li {
+    display: block;
+}
+
+li.menu-item-has-children ul {
+    width: 25%;
+}
+
+/*Prevent text wrapping*/
+li.menu-item-has-children ul li a {
+    white-space: nowrap;
+    border-radius: 0;
+}
+
+/*Style for dropdown links*/
+.primary-menu li.menu-item-has-children>a::after {
+    content: ' ▼';
+}
+
+.primary-menu li.menu-item-has-children ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+
+/*Hover state for dropdown links*/
+li.menu-item-has-children ul a:hover,
+li.menu-item-has-children ul a:focus {
+    background: #19c589;
+    color: #fff;
+}
+
+li.menu-item-has-children ul li a:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+li.menu-item-has-children ul li a:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/*Display the dropdown on hover*/
+ul li a:hover+.sub-menu,
+ul li a:focus+.sub-menu,
+.sub-menu:hover,
+.sub-menu:focus {
+    position: absolute;
+    display: block;
+    z-index: 1000;
+}
+
+/*Responsive Styles*/
+@media screen and (max-width : 768px) {
+
+    /*Create vertical spacing*/
+    .primary-menu>ul>li {
+        margin-bottom: 1px;
+    }
+
+    li.menu-item-has-children ul {
+        width: 60%;
+        right: 0;
+        background: white;
+    }
+
+    /*Make all menu links full width*/
+    ul li,
+    li a {
+        width: 100%;
+    }
+
+}
+
+/*End Nav css*/
+
+/* Heading */
+#ttr_header {
+    min-height: 47px;
+    margin-bottom: 6px;
+}
+
+/* Sidebar css */
+#ttr_sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#ttr_sidebar li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 100%;
+
+}
+
+#ttr_sidebar li a:hover {
+    color: #fff;
+}
+
+#ttr_sidebar li {
+    padding: 1px 10px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    background: #d1d6da;
+
+}
+
+#ttr_sidebar li:hover {
+    background: #198754;
+}
+
+.size-post-thumbnail {
+    width: 100%;
+    height: 220px;
+}
+
+.link-highlight:hover {
+    text-decoration: underline;
+}
+
+.responsive-card-img {
+    height: 150px;
+    width: 100%;
+}
+
+@media (max-width: 574px) {
+    .responsive-card-img {
+        height: 220px;
+    }
+}
+
+.cat-divider-wrapper {
+    position: relative;
+}
+
+.cat-divider {
+    box-shadow: inset 0 -11px 0 -1px #fff, inset 0 -12px #333;
+}
+
+@media screen and (max-width: 576px) {
+    .cat-divider {
+        box-shadow: 0px -12px 0px #fff, 0px -14px 0px #333;
+    }
+}
+
+.cat-divider span {
+    background-color: #fff;
+    padding: 5px 10px;
+    white-space: nowrap;
+    transition: transform .5s ease-in-out;
+}
+
+@media screen and (min-width: 577px) {
+
+.cat-divider:hover {
+    transform: scaleX(1.005);
+}
+}
+
+.image-wrapper-lg {
+    max-width: 500px;
+    max-height: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-wrapper-lg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.image-wrapper-md {
+    max-width: 280px;
+    max-height: 190px;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-wrapper-md img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.image-wrapper-sm {
+    max-width: 125px;
+    max-height: 100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-wrapper-sm img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.link-primary {
+    color: var(--bs-gray-dark);
+    text-decoration: none;
+}
+
+.link-primary:hover {
+    color: var(--bs-gray-700);
+    text-decoration: underline;
+}
+
+.link-secondary {
+    text-decoration: none;
+    color: var(--bs-gray-900);
+}
+
+.link-secondary:hover {
+    color: var(--bs-gray-700);
+}
+
+.r-sidebar .inner {
+
+    border-left: 1px solid var(--bs-gray-600);
+    border-top: 1px solid var(--bs-gray-600);
+}
+
+@media screen and (max-width: 990px) {
+    .r-sidebar .inner {
+        border-left: none;
+        padding-top: 1.2rem;
+    }
+
+}
+
+.copyright {
+    background: #e9ecef;
+}
