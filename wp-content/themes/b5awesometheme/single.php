@@ -20,7 +20,7 @@ require_once 'header.php';
                 </div>
                 <div class="float-sm-end col-12 col-md-6 ps-md-2">
                     <figure>
-                        <div class="image-wrapper-lg">
+                        <div class="image-wrapper-xlg">
                             <?php if (has_post_thumbnail()) {
                                 the_post_thumbnail();
                             } else { ?>
