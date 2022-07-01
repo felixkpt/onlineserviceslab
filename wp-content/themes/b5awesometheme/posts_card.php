@@ -6,8 +6,8 @@ while ($i < 1) {
         <div class="card h-100 card-default">
             <div class="card border-0 mx-auto overflow-hidden h-100 pt-2">
                 <a class="text-decoration-none overflow-hidden h-100" href="<?php the_permalink() ?>" rel="bookmark" title="Link to <?php the_title_attribute(); ?>">
-                    <div class="image-wrapper-md">
-                        <img class="rounded-sm mx-auto" src="<?php echo $image_url ?>" alt="">
+                    <div class="col-sm-9 col-12 mx-auto">
+                        <img class="rounded-sm" src="<?php echo $image_url ?>" alt="">
                     </div>
                 </a>
             </div>
