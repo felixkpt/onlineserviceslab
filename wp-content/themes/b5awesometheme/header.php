@@ -15,7 +15,7 @@
     <?php echo wp_head(); ?>
     <?php if ($_SERVER['HTTP_HOST'] != 'localhost' && !current_user_can('manage_options')) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW0XE13E2C"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD4N4CS6HP"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -24,7 +24,7 @@
             }
             gtag('js', new Date());
 
-            gtag('config', 'G-TW0XE13E2C');
+            gtag('config', 'G-YD4N4CS6HP');
         </script>
     <?php endif; ?>
     <?php
