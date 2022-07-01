@@ -78,6 +78,5 @@
             </div>
         </div>
     </nav>
-
     <main>
         <div class="container-fluid px-4 my-3">

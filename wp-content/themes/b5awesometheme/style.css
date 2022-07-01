@@ -460,3 +460,26 @@ ul li a:focus+.sub-menu,
 }
 
 /* End .carousel-slide */
+
+.image-wrapper {
+    display: block;
+    padding-bottom: 65%;
+    position: relative;
+    border-radius: 16px;
+}
+
+.image-wrapper img {
+    position: absolute;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.size-post-thumbnail {
+    width: 100%;
+    height: auto;
+}

@@ -69,32 +69,35 @@
 
         ];
         ?>
-        <img src="<?php echo $item['image'] ?>" alt="">
         <div id="sponsored-content" class="carousel-slide-wrapper" data-carousel-item-width="400">
             <div class="carousel-slide">
                 <div class="carousel-slide-content">
                     <?php foreach ($sponsored as $item) : ?>
                         <div class="carousel-slide-item shadow p-1">
                             <div class="row">
-                                <div class="col-6">
-                                    <a class="link-primary" href="<?php echo $item['link'] ?>" target="_blank">
-                                        <h5>
-                                            <?php echo $item['title'] ?>
-                                        </h5>
-                                        <p>
-                                            <?php echo $item['content'] ?>
-                                        </p>
-                                    </a>
-                                </div>
-                                <div class="col-6">
-                                    <a class="link-primary d-block" href="<?php echo $item['link'] ?>" target="_blank">
-                                        <div class="col-sm-9 col-12 mx-auto">
-                                            <?php
-                                            $image = $item['image'];
-                                            ?>
-                                            <img width="100%" height="auto" src="<?php echo $image ?>" alt="">
-                                        </div>
-                                    </a>
+                                <div class="col-12">
+                                    <div class="col-6 float-start">
+                                        <a class="link-primary" href="<?php echo $item['link'] ?>" target="_blank">
+                                            <h5>
+                                                <?php echo $item['title'] ?>
+                                            </h5>
+                                            <p>
+                                                <?php echo $item['content'] ?>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 float-end">
+                                        <a class="link-primary d-block" href="<?php echo $item['link'] ?>" target="_blank">
+                                            <div class="col-md-12 mx-auto">
+                                                <?php
+                                                $image = $item['image'];
+                                                ?>
+                                                <div class="image-wrapper">
+                                                    <img src="<?php echo $image ?>" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,18 +1,12 @@
 <?php $i = 0;
+
 while ($i < 1) {
     $i++; ?>
     <div class="col p-2">
-
-        <div class="card h-100 card-default">
-            <div class="card border-0 mx-auto h-100 pt-2">
-                <div class="col-12 overflow-hidden">
-                    <a class="text-decoration-none overflow-hidden h-100" href="<?php the_permalink() ?>" rel="bookmark" title="Link to <?php the_title_attribute(); ?>">
-                        <div class="col-sm-9 col-12 mx-auto">
-                            <img class="rounded-sm" src="<?php echo $image_url ?>" alt="">
-                        </div>
-                    </a>
-                </div>
-            </div>
+        <div class="h-100 shadow p-2">
+            <a href="<?php the_permalink() ?>" class="image-wrapper">
+                <img src="<?php echo $image_url ?>" title="Link to <?php the_title_attribute(); ?>" alt="<?php the_title() ?>">
+            </a>
             <div class="col-12 px-2">
                 <a class="d-block link-primary" href="<?php the_permalink() ?>" rel="bookmark" title="Link to <?php the_title_attribute(); ?>">
                     <h5>
@@ -20,14 +14,12 @@ while ($i < 1) {
                     </h5>
                 </a>
                 <div>
-                    <small class="text-muted fst-italic"><?php the_time('F jS, Y') ?></small>
+                    <h6 class="font-weight-bold fst-italic text-muted">Posted on <?php echo the_time('F jS, Y') ?></h6>
                 </div>
                 <div>
                     <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                 </div>
             </div>
         </div>
-
     </div>
-
 <?php } ?>

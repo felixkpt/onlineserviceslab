@@ -21,7 +21,7 @@ add_theme_support( 'post-thumbnails' );
 
 // set_post_thumbnail_size( 200, 200, true);
 
-function show_post_preview($counts, $card_styles = 'height:200px') {
+function show_post_preview($counts, $card_styles = '') {
 
 
     $att_id = get_post_thumbnail_id( get_the_ID() );
