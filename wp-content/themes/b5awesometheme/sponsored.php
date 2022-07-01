@@ -70,7 +70,7 @@
         ];
         ?>
         <img src="<?php echo $item['image'] ?>" alt="">
-        <div class="carousel-slide-wrapper">
+        <div id="sponsored-content" class="carousel-slide-wrapper" data-carousel-item-width="400">
             <div class="carousel-slide">
                 <div class="carousel-slide-content">
                     <?php foreach ($sponsored as $item) : ?>
@@ -87,7 +87,6 @@
                                     </a>
                                 </div>
                                 <div class="col-6">
-                                    <img src="<?php echo $item['image'] ?>" alt="">
                                     <a class="link-primary d-block" href="<?php echo $item['link'] ?>" target="_blank">
                                         <div class="col-sm-9 col-12 mx-auto">
                                             <?php
@@ -113,6 +112,6 @@
     </div>
 </div>
 <script>
-    const target = "#sponsored"
+    const target = "#sponsored-content"
     carousel(target)
 </script>
