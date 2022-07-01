@@ -20,11 +20,11 @@ require_once 'header.php';
                 </div>
                 <div class="float-sm-end col-12 col-md-6 ps-md-2">
                     <figure>
-                        <div class="image-wrapper-xlg">
+                        <div class="col-sm-9 col-md-12 mx-auto">
                             <?php if (has_post_thumbnail()) {
                                 the_post_thumbnail();
                             } else { ?>
-                                <img src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
+                                <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
                             <?php } ?>
                         </div>
                     </figure>

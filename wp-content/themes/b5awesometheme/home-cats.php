@@ -35,7 +35,7 @@ foreach ($categories as $category) : ?>
                     endwhile;
                     ?>
                 </div>
-                <div class="float-sm-end col-md-6 ps-md-2">
+                <div class="float-md-end col-md-6 ps-md-2">
                     <?php
                     $cts = 0;
                     // The Loop
@@ -47,11 +47,11 @@ foreach ($categories as $category) : ?>
                     ?>
                         <figure>
                             <a class="link-primary" href="<?php the_permalink() ?>">
-                                <div class="image-wrapper-lg">
+                                <div class="col-sm-8 col-md-12 mx-auto">
                                     <?php if (has_post_thumbnail()) {
                                         the_post_thumbnail();
                                     } else { ?>
-                                        <img src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
+                                        <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
                                     <?php } ?>
                                 </div>
                                 <figcaption class="fs-6 fst-italic text-center"><?php the_title(); ?></figcaption>

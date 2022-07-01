@@ -8,13 +8,14 @@
     <title><?php echo $title ?></title>
     <meta name="description" content="<?php echo $description ?>">
     <script type="text/javascript" src="<?php echo get_theme_root_uri() . '/b5awesometheme/js/bootstrap.min.js' ?>"></script>
+    <script type="text/javascript" src="<?php echo get_theme_root_uri() . '/b5awesometheme/js/carousel.js' ?>"></script>
     <link rel="stylesheet" href="<?php echo get_theme_root_uri() . '/b5awesometheme/css/bootstrap.css' ?>">
     <link rel="stylesheet" href="<?php echo get_theme_root_uri() . '/b5awesometheme/css/font-awesome/css/fontawesome-all.css' ?>">
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_url') . '?v=' . date('H:i:s') ?>">
     <?php echo wp_head(); ?>
     <?php if ($_SERVER['HTTP_HOST'] != 'localhost' && !current_user_can('manage_options')) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD4N4CS6HP"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8SR0SRC3Z"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -23,7 +24,7 @@
             }
             gtag('js', new Date());
 
-            gtag('config', 'G-YD4N4CS6HP');
+            gtag('config', 'G-D8SR0SRC3Z');
         </script>
     <?php endif; ?>
     <?php

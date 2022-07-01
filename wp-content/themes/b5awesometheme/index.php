@@ -44,7 +44,7 @@ require_once 'header.php';
                         ?>
                             <figure>
                                 <a class="link-primary" href="<?php the_permalink() ?>">
-                                    <div class="image-wrapper-xlg">
+                                    <div class="col-sm-9 col-md-12 mx-auto">
                                         <?php if (has_post_thumbnail()) {
                                             the_post_thumbnail();
                                         } else { ?>

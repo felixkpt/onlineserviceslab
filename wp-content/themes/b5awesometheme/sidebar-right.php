@@ -27,11 +27,11 @@
                         }
                 ?>
                         <a class="link-secondary" href="<?php the_permalink() ?>">
-                            <div class="image-wrapper-md">
+                            <div class="col-sm-9 col-md-12 mx-auto">
                                 <?php if (has_post_thumbnail()) {
                                     the_post_thumbnail();
                                 } else { ?>
-                                    <img src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
+                                    <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
                                 <?php } ?>
                             </div>
                             <h4><?php the_title(); ?></h4>
@@ -57,11 +57,13 @@
                     ?>
                             <div class="col-6">
                                 <a class="link-secondary" href="<?php the_permalink() ?>">
-                                    <div class="image-wrapper-sm">
+                                    <div class="col-sm-8 col-md-12 mx-auto" style="width:100px;height: 100px;overflow:hidden">
                                         <?php if (has_post_thumbnail()) {
-                                            the_post_thumbnail();
+                                            ?>
+                                            <img width="100" height="100" src="<?php echo the_post_thumbnail_url() ?>" alt="">
+                                            <?php 
                                         } else { ?>
-                                            <img src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
+                                            <img width="100" height="100" src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
                                         <?php } ?>
                                     </div>
                                     <h6><?php the_title(); ?></h6>

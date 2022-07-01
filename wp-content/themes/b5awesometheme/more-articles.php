@@ -49,7 +49,7 @@
                 ?>
                         <figure>
                             <a class="link-primary" href="<?php the_permalink() ?>">
-                                <div class="image-wrapper-lg">
+                                <div class="col-sm-9 col-md-12 mx-auto">
                                     <?php if (has_post_thumbnail()) {
                                         the_post_thumbnail();
                                     } else { ?>
