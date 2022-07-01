@@ -90,7 +90,7 @@
                                     <a class="link-primary d-block" href="<?php echo $item['link'] ?>" target="_blank">
                                         <div class="col-sm-9 col-12 mx-auto">
                                             <?php
-                                            $image = 'http://localhost/infosourcehub/wp-content/uploads/2022/06/jskhfiuejknf3dd.jpg';
+                                            $image = $item['image'];
                                             ?>
                                             <img width="100%" height="auto" src="<?php echo $image ?>" alt="">
                                         </div>

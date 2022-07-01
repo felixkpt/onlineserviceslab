@@ -30,7 +30,6 @@ function carousel(target, itemWidth = 0, scrollBy = 0) {
             next.style.display = "block";
         }
     });
-
     let width = carouselSlide.offsetWidth;
     window.addEventListener("resize", e => (width = carouselSlide.offsetWidth));
 }
