@@ -51,7 +51,6 @@
     endif;
     ?>
 </head>
-
 <body>
     <?php if ($_SERVER['HTTP_HOST'] != 'localhost') : ?>
         <div id="fb-root"></div>

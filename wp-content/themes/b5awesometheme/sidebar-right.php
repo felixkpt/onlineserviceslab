@@ -35,7 +35,7 @@
                                     $orig = wp_get_attachment_image_src($id);
                                     $image_url = $orig[0];
                                 } ?>
-                                <img src="<?php echo $image_url ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?php the_title(); ?>" />
+                                <img height="250" src="<?php echo $image_url ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?php the_title(); ?>" />
                             </div>
                             <h5><?php the_title(); ?></h5>
                             <p><?php echo wp_trim_words(the_excerpt_embed(), 20, '...'); ?></p>

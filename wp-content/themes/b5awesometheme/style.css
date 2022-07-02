@@ -115,6 +115,7 @@ h6 a {
 
 /*Start Nav css*/
 /*Strip the ul of padding and list styling*/
+
 .primary-menu ul {
     list-style-type: none;
     margin: 0;
@@ -143,12 +144,11 @@ h6 a {
 
 }
 
-
 .primary-menu ul li a::before {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;;
     width: 0%;
     transition: all .4s ease-in-out;
     border-bottom: solid 2px transparent;
@@ -162,6 +162,10 @@ h6 a {
 }
 
 /*Style for sub menu links*/
+ul li .sub-menu {
+    width: 100%;
+}
+
 ul.sub-menu>li a {
     display: block;
     text-align: left;
@@ -182,9 +186,6 @@ li.menu-item-has-children ul li {
     display: block;
 }
 
-li.menu-item-has-children ul {
-    width: 25%;
-}
 
 /*Prevent text wrapping*/
 li.menu-item-has-children ul li a {
