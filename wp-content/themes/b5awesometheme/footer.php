@@ -1,13 +1,12 @@
 </div>
 <!--End main .container-->
 </main>
-<footer id="ttr_footerrr" class="overflow-hidden my-2 bg-light">
+<footer id="ttr_footerrr" class="overflow-hidden my-2">
     <div class="col-12 overflow-hidden px-2">
         <h4 class="text-decoration-none section-headline">
             <span class="section-headline-text"><?php echo bloginfo('description') ?></span>
         </h4>
     </div>
-
     <div class="row row-cols-2 row-cols-md-4 px-2">
         <div>
             <h5>Site Info</h5>

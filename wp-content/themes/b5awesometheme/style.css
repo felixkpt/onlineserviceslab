@@ -374,8 +374,11 @@ ul li a:focus+.sub-menu,
 
 }
 
+footer {
+    background: azure;
+}
 .copyright {
-    background: #e9ecef;
+    background: #c8d7d7;
 }
 
 /* Begin .carousel-slide-item */
