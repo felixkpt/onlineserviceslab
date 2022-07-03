@@ -1,110 +1,144 @@
-<?php
+<style>
+.catcard {
+    min-height: 100%;
+}
 
-$categories = array_slice(get_categories(), 0, 4);
-foreach ($categories as $category) : ?>
+.catcard div:hover a {
+    text-decoration: underline;
+}
 
-    <div class="row my-3">
+.catcard a {
+    line-height: 0.5rem;
+    color: var(--bg-grey-500);
+    text-decoration: none;
+    font-weight: 500;
+}
 
-        <div class="col-12">
-            <div class="cat-divider-wrapper">
-                <h4 class="text-end my-4 cat-divider text-dark"><span><a class="text-dark" href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?> <i class="fas fa-chevron-circle-right"></i></a></span></h4>
-            </div>
-        </div>
-        <?php
-        // Define our WP Query Parameters
-        $args = array('post_type' => 'post', 'category_name' => $category->slug, 'post_status' => 'publish',  'posts_per_page' => 5,);
+.catcard .img-wrapper {
+    overflow: hidden;
+    padding: 35%;
+    position: relative;
+}
 
-        $query = new WP_Query($args);
-        if ($query->have_posts()) :
-        ?>
-            <div class="col-12 col-md-9">
-                <div class="float-sm-start col-md-6">
-                    <?php
-                    $cts = 0;
-                    // The Loop
-                    while ($query->have_posts()) : $query->the_post();
-                        $cts++;
-                        if ($cts > 1) {
-                            break;
-                        }
-                    ?>
-                        <h4><a class="link-primary" href="<?php the_permalink() ?>" rel="bookmark" title="Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-                        <p><?php echo wp_trim_words(the_excerpt_embed(), 20, '...'); ?></p>
-                        <hr>
-                    <?php
-                    endwhile;
-                    ?>
-                </div>
-                <div class="float-md-end col-md-6 ps-md-2">
-                    <?php
-                    $cts = 0;
-                    // The Loop
-                    while ($query->have_posts()) : $query->the_post();
-                        $cts++;
-                        if ($cts > 1) {
-                            break;
-                        }
-                    ?>
-                        <figure>
-                            <a class="link-primary" href="<?php the_permalink() ?>">
-                                <div class="col-sm-8 col-md-12 mx-auto">
-                                    <?php if (has_post_thumbnail()) {
-                                        the_post_thumbnail();
-                                    } else { ?>
-                                        <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="<?php bloginfo('template_directory'); ?>/images/default-featured-images.jpg" alt="<?php the_title(); ?>" />
-                                    <?php } ?>
-                                </div>
-                                <figcaption class="fs-6 fst-italic text-center"><?php the_title(); ?></figcaption>
-                            </a>
-                        </figure>
-                    <?php
-                    endwhile;
-                    ?>
-                </div>
-                <?php
-                $cts = 0;
-                // The Loop
-                while ($query->have_posts()) : $query->the_post();
-                    $cts++;
-                    if ($cts > 1) {
-                        break;
-                    }
-                ?>
-                    <div class="float-sm-start col-md-6 ps-md-2">
-                        <h4><a class="link-primary" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
+.catcard img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.catcard img:hover {
+    transform: scale(1.04);
+}
+
+.catcard h2 {
+    position: relative;
+    border-top: 1px solid var(--bs-gray-500);
+}
+
+.catcard h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--bg-primary);
+}
+</style>
+
+<div class="row my-3">
+    <div class="col-12">
+        <hr>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col shadow-sm catcard">
+                <h2 class="pt-1 pb-2">Business & Economics</h2>
+                <div>
+                    <div class="img-wrapper">
+                        <img src="http://localhost/onlineserviceslab/wp-content/uploads/2022/06/FSJDFSU3EJWQDN.jpg"
+                            alt="">
                     </div>
-                <?php
-                endwhile;
-                ?>
-            </div>
-            <div class="col-12 col-md-3 right-sidebar">
-                <div class="row inner">
-                <?php
-                    $counts = $query->post_count;
-                    $cts = 0;
-                    // The Loop
-                    while ($query->have_posts()) : $query->the_post();
-                        $cts++;
-                        if ($cts > 2) {
-                            break;
-                        }
-                        $class = "";
-                        if ($cts !== 2) {
-                            $class = "";
-                        }
-                    ?>
-                        <div class="col-12 <?php echo $class ?>">
-                            <h5><a class="link-primary" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+                    <div class="p-1">
+                        <div class="" style="font-size: 90%;">
+                            21:56, 02-Jul-2022
                         </div>
-                    <?php
-                    endwhile;
-                    ?>
+                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
+                            dolor, maxime
+                            quos
+                        </a>
+                    </div>
                 </div>
+
+                <div>
+                    <div class="p-1">
+                        <div class="" style="font-size: 90%;">
+                            21:56, 02-Jul-2022
+                        </div>
+                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
+                            dolor, maxime
+                            quos
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="p-1">
+                        <div class="" style="font-size: 90%;">
+                            21:56, 02-Jul-2022
+                        </div>
+                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
+                            dolor, maxime
+                            quos
+                        </a>
+                    </div>
+                </div>
+
             </div>
-        <?php
-            wp_reset_postdata();
-        else : no_posts();
-        endif;
-        ?>
+            <div class="col shadow-sm catcard">
+                <h2 class="pt-1 pb-2">Empowerment</h2>
+                <div>
+                    <div class="img-wrapper">
+                        <img src="http://localhost/onlineserviceslab/wp-content/uploads/2022/06/jebikahiuehf2334.jpg">
+                    </div>
+                    <div class="p-1">
+                        <div class="" style="font-size: 90%;">
+                            21:56, 02-Jul-2022
+                        </div>
+                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
+                            dolor, maxime
+                            quos
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="p-1">
+                        <div class="" style="font-size: 90%;">
+                            21:56, 02-Jul-2022
+                        </div>
+                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
+                            dolor, maxime
+                            quos
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="p-1">
+                        <div class="" style="font-size: 90%;">
+                            21:56, 02-Jul-2022
+                        </div>
+                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
+                            dolor, maxime
+                            quos
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
     </div>
-<?php endforeach; ?>
+</div>
