@@ -16,14 +16,15 @@ function carousel(target, itemWidth = 0, scrollBy = 0) {
         if (carouselSlide.scrollWidth !== 0) {
             prev.style.display = "block";
         }
-        if (content.scrollWidth - width - scrollBy <= carouselSlide.scrollLeft + width) {
+        // console.log(content.scrollWidth - width - scrollBy, carouselSlide.scrollLeft + width)
+        if (content.scrollWidth - width - scrollBy <= carouselSlide.scrollLeft) {
             next.style.display = "none";
         }
     });
 
     prev.addEventListener("click", e => {
         carouselSlide.scrollBy(-(scrollBy), 0);
-        if (carouselSlide.scrollLeft - width - scrollBy <= 0) {
+        if (carouselSlide.scrollLeft - scrollBy <= 0 ) {
             prev.style.display = "none";
         }
         if (!content.scrollWidth - width - scrollBy <= carouselSlide.scrollLeft + width) {
