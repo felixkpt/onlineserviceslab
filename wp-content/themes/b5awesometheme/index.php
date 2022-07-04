@@ -5,7 +5,7 @@ require_once 'header.php';
 ?>
 
 <div class="row">
-    <div class="col-12 col-lg-9 p-md-0 mt-3">
+    <div class="col-12 col-lg-9 p-0 mt-3">
         <?php
         // Define our WP Query Parameters
         $query = new WP_Query('posts_per_page=8&post_type=post&published=published');

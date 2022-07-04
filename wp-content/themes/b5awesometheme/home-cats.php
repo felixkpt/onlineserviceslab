@@ -53,55 +53,59 @@
 <div class="row my-3">
     <div class="col-12">
         <hr>
-        <div class="row row-cols-1 row-cols-md-2">
+        <div class="row row-cols-2">
 
             <?php
-            $categories = array_slice(get_categories('parent=0'), 0, 1);
+            $categories = array_slice(get_categories('parent=0'), 0, 6);
             foreach ($categories as $category) : ?>
 
-                <div class="col shadow-sm catcard">
+                <div class="shadow-sm catcard">
                     <h2 class="pt-1 pb-2"><?php echo $category->cat_name; ?></h2>
-                    <?php 
-                    $
+                    <?php
+                    // Define our WP Query Parameters
+                    $args = array('post_type' => 'post', 'parent' => '0', 'category_name' => $category->slug, 'post_status' => 'publish',  'posts_per_page' => 5,);
+
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) :
                     ?>
-                    <div>
-                        <div class="img-wrapper">
-                            <img src="http://localhost/onlineserviceslab/wp-content/uploads/2022/06/FSJDFSU3EJWQDN.jpg" alt="">
-                        </div>
-                        <div class="p-1">
-                            <div class="" style="font-size: 90%;">
-                                21:56, 02-Jul-2022
+                        <?php
+                        $cts = 0;
+                        // The Loop
+                        while ($query->have_posts()) : $query->the_post();
+                            $cts++;
+                        ?>
+                            <div>
+                                <?php if ($cts == 1) : ?>
+                                    <div>
+                                        <div class="img-wrapper">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <?php the_post_thumbnail() ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="p-1">
+                                            <div class="" style="font-size: 90%;">
+                                                <?php the_date() ?>
+                                            </div>
+                                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                                        </div>
+                                    </div>
+                                <?php else : ?>
+                                    <div>
+                                        <div class="p-1">
+                                            <div class="" style="font-size: 90%;">
+                                                <?php the_date() ?>
+                                            </div>
+                                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
-                                dolor, maxime
-                                quos
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="p-1">
-                            <div class="" style="font-size: 90%;">
-                                21:56, 02-Jul-2022
-                            </div>
-                            <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
-                                dolor, maxime
-                                quos
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="p-1">
-                            <div class="" style="font-size: 90%;">
-                                21:56, 02-Jul-2022
-                            </div>
-                            <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis atque
-                                dolor, maxime
-                                quos
-                            </a>
-                        </div>
-                    </div>
+                        <?php endwhile;  ?>
+                    <?php else :  ?>
+                        no_po
+                    <?php endif; ?>
                 </div>
+            <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
     </div>
 </div>
