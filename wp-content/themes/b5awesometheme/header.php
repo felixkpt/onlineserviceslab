@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php echo $title ?></title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="description" content="<?php echo $description ?>">
     <script type="text/javascript" src="<?php echo get_theme_root_uri() . '/b5awesometheme/js/bootstrap.min.js' ?>"></script>
     <script type="text/javascript" src="<?php echo get_theme_root_uri() . '/b5awesometheme/js/carousel.js' ?>"></script>
