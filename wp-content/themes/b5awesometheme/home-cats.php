@@ -53,7 +53,7 @@
 <div class="row my-3">
     <div class="col-12">
         <hr>
-        <div class="row row-cols-2">
+        <div class="row row-cols-1 row-cols-md-2">
 
             <?php
             $categories = array_slice(get_categories('parent=0'), 0, 6);
